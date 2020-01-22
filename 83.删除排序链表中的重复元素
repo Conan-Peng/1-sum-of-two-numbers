@@ -1,0 +1,22 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* cur = head;
+        while (cur && cur->next)
+        {
+            if (cur->val == cur->next->val)//如果当前节点的值等于下一节点的值，则将当前节点的指针指向下下一个节点,并在当前节点上直接进入下一次判断
+                cur->next = cur->next->next;
+            else
+                cur = cur->next; //如果不等，则进入下一节点再做判断
+        }
+        return head;
+    }
+};
