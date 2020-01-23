@@ -1,0 +1,37 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* cur = head;
+        ListNode* newNode = new ListNode(-1);//因为可能删头结点，而最后要返回头结点，所以new一个内存空间做头结点的前驱
+        newNode->next = cur;
+        ListNode* pre = newNode;      
+        pre->val = 0;
+        while (cur && cur->next)
+        {
+            if (cur->val == cur->next->val)
+            {
+                while (cur->next && cur->val == cur->next->val) //判断是否重复节点,如果是，找到相同的最后一个节点
+                 {            
+                     cur->next = cur->next->next;//直接修改当前节点存储的下一节点的值，使之定位到下下个节点  
+                 }
+                 pre->next = cur->next;//将前驱指向后继
+                 cur = cur->next;//将当前节点移向下一节点
+            }
+            else
+            {
+                pre = cur;
+                cur = cur->next;
+            }
+            
+        }
+        return newNode->next;
+    }
+};
