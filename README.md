@@ -13,3 +13,5 @@
 2. 在读程序时有利于：将原作者的思维逻辑按顺序，循环，判断框图可视化，比没有明显联结关系的代码更易直观理解。
 
 ![](https://github.com/Conan-Peng/1-sum-of-two-numbers/blob/master/WechatIMG1351.png)
+
+![十大排序](https://github.com/Conan-Peng/1-sum-of-two-numbers/blob/master/十大排序.png)
