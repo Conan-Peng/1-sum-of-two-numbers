@@ -12,6 +12,19 @@
 1. 在写程序时有利于：1）快速将一闪而过的思维灵感用自然语言描述出来，而后再将其转换为机器语言较为高效；2）有利于将运行逻辑更清晰，更直观地展现出来（逻辑可视化）。
 2. 在读程序时有利于：将原作者的思维逻辑按顺序，循环，判断框图可视化，比没有明显联结关系的代码更易直观理解。
 
+# delete 和 delete [] 的使用区别
+1.delete内置类型的数组时，可以混用delete 和 delete []， 因为delete内置类型不需要调用析构函数。
+2.delete自定义类型的数组时，只能用 delete[]，如果用delete只会调用第一个元素的析构函数，无法释放每个元素的内存空间。
+3.delete单个元素的内存空间时，可以混用delete 和 delete []。
+
+# 内存空间泄露
+内存泄漏（Memory Leak）是指程序中己“动态分配”的“堆内存”由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。
+
+
+
+
 ![](https://github.com/Conan-Peng/1-sum-of-two-numbers/blob/master/WechatIMG1351.png)
 
 ![十大排序](https://github.com/Conan-Peng/1-sum-of-two-numbers/blob/master/十大排序.png)
+
+
