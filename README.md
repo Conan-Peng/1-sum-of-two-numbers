@@ -21,10 +21,10 @@
 内存泄漏（Memory Leak）是指程序中己“动态分配”的“堆内存”由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。
 
 
-
-
-![](https://github.com/Conan-Peng/1-sum-of-two-numbers/blob/master/WechatIMG1351.png)
-
-![十大排序](https://github.com/Conan-Peng/1-sum-of-two-numbers/blob/master/十大排序.png)
-
+# 动态规划的解题步骤：
+1.确定可以用动规，也就是最优序列可以由最优子序列表示（存在重叠overlap）
+2.开动规数组表示状态
+3.列出递推式（前两步都有的话，这一步水到渠成）
+4.代码实现
+（最难的是第一步）
 
