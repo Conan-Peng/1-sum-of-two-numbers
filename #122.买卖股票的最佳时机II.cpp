@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
 public:
     int maxProfit(vector<int>& prices) {
         //用动态规划，二维数组dp[i][j]表示第i天持有（j=1)或不持有（j=0）股票所能获得的最大利润
@@ -20,4 +20,4 @@ public:
         }
         return dp[prices.size()-1][0];
     }
-};
+}; 
