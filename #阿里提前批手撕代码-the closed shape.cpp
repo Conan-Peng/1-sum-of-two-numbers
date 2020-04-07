@@ -5,6 +5,7 @@ using namespace std;
 class Solution{
 public:
     bool closedShape(vector<vector<int> > board){
+        //题目见本库中的图片文件
         //使用深搜的方法
         //从边缘开始扫描，如果有0，则对0的上下左右深搜0，并将搜到的0改为1，此时被包围的0将不会被搜索到
         //再次遍历整个数组，如果还有0，那么返回true，否则返回false
