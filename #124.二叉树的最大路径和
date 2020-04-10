@@ -1,0 +1,25 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    int maxPathSum(TreeNode* root) {
+        int res = INT_MIN;
+        helper(root, res);
+        return res;
+    }
+    int helper(TreeNode* root, int& res){//返回值应该是以root节点为起点到达叶节点的一条最大路径的长度
+        if (!root) return 0; //递归终止条件
+        int left = max(helper(root->left, res), 0);//自顶向下地寻找以左孩子为最终节点的延伸到叶节点的一条最大路径的长度
+        int right = max(helper(root->right, res), 0);
+        res = max(res, left + right + root->val); //每次递归都附带更新res为较大值
+        return max(left, right) + root->val;
+    }
+
+};
