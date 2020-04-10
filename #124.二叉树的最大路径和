@@ -18,7 +18,8 @@ public:
         if (!root) return 0; //递归终止条件
         int left = max(helper(root->left, res), 0);//自顶向下地寻找以左孩子为最终节点的延伸到叶节点的一条最大路径的长度
         int right = max(helper(root->right, res), 0);
-        res = max(res, left + right + root->val); //每次在返回前都附带更新res为左侧最大值加上右侧最大值加上根节点值
+        res = max(res, left + right + root->val); //每次在返回前都附带更新res为左侧最大值加上右侧最大值加上根节点值，这样就更新res为
+                                                  //以所有节点为根节点时到达左右子树叶节点可以达到的最大路径和
         return max(left, right) + root->val;
     }
 
