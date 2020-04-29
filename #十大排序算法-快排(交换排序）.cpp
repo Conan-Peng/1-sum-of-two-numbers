@@ -9,7 +9,7 @@ public:
         if (leftEnd >= rightEnd) return;
 
         int pivot = a[leftEnd];
-        int leftCursor = leftEnd;
+        int leftCursor = leftEnd; //左开右闭区间，最左边的是支点取不到。
         int rightCursor = rightEnd + 1;//警醒！一般编译通过的运行异常都是--指针指向未知空间！
 
         while(true)
