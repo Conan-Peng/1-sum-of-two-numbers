@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//归并排序其实是合并两个有序数组，
+//它用到一个很巧妙的思想，即：数组只有一个节点的时候该数组一定是有序的，因此使用递归，从两个只有一个元素的数组开始合并
 void merge(vector<int>& a, int low, int mid, int high){
     int *temp = new int[high - low + 1];
     int i = low; //指向第一个序列的第一个元素的索引
